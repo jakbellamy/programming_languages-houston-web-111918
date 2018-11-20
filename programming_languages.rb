@@ -4,7 +4,7 @@ def reformat_languages(languages)
   languages.each do |type, hash|
     hash.each do |name, type_hash|
       type_hash.each do |key, value|
-        if new_hash[name]
+        if !new_hash[name]
           new_hash[name] = {key => value, :style => [type]}
         else
           new_hash[name][:style] << type
